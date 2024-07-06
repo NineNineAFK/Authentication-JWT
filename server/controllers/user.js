@@ -34,9 +34,9 @@ async function handleUserlogin(req, res) {
             });
         }
 
-        const sessionId = uuidv4();
-        setUser(sessionId, user);
-        res.cookie("uid", sessionId);  // Cookie with name "uid" points to the sessionId
+       
+        const token = setUser(user);
+        res.cookie("uid", token);  // Cookie with name "uid" points to the sessionId
 
         return res.redirect("/home");
     } catch (error) {

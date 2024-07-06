@@ -10,6 +10,7 @@ const router= express.Router();
 
 const userRoute = require("./routes/user")
 const staticRouter= require("./routes/staticRouter")
+const openRouter = require("./routes/openRouter");
 
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
@@ -18,6 +19,7 @@ app.use(cookieParser());
 
 app.use("/user", userRoute);
 app.use("/home", restrictToLoggedInUserOnly, staticRouter);
+app.use("/open", openRouter);
 
 app.set("view engine","ejs");
 app.set("views", path.resolve("./views"));
