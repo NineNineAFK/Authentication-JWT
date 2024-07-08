@@ -2,11 +2,11 @@ const express = require("express");
 const app= express();
 const path = require("path");
 const cookieParser = require("cookie-parser")
+const session = require("express-session");
 const {restrictToLoggedInUserOnly} = require("./middlewares/auth");
 
 
 const router= express.Router();
-
 
 const userRoute = require("./routes/user")
 const staticRouter= require("./routes/staticRouter")
@@ -17,13 +17,14 @@ app.use(express.urlencoded({extended:false}))
 app.use(cookieParser());
 
 
+
+
 app.use("/user", userRoute);
 app.use("/home", restrictToLoggedInUserOnly, staticRouter);
 app.use("/open", openRouter);
 
 app.set("view engine","ejs");
 app.set("views", path.resolve("./views"));
-
 
 
 

@@ -36,7 +36,7 @@ async function handleUserlogin(req, res) {
 
        
         const token = setUser(user);
-        res.cookie("uid", token);  // Cookie with name "uid" points to the sessionId
+        res.cookie("uid", token,{ httpOnly: true });  // Cookie with name "uid" points to the sessionId
 
         return res.redirect("/home");
     } catch (error) {

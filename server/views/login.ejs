@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>signup</title>
+    <title>Login</title>
 </head>
 <body>
-   <h1>login</h1>
+   <h1>Login</h1>
    <form action="/user/login" method="post">
-
-
-    <label> email </label>
-    <input type="text" name="email" id="">
-
-    <label> password </label>
-    <input type="text" name="password" id="">
-
-  
-    <% if (locals.Error) { %>
-        <% Error %>
-    <% } %>
-        <button type="submit">login</button>
+      <label>Email</label>
+      <input type="text" name="email" id="">
+      <label>Password</label>
+      <input type="password" name="password" id="">
+      <% if (locals.error) { %>
+          <p><%= error %></p>
+      <% } %>
+      <button type="submit">Login</button>
    </form>
-   
 </body>
 </html>
