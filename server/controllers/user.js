@@ -46,9 +46,19 @@ async function handleUserlogin(req, res) {
 }
 
 
-
+async function handleLogout(req, res) {
+    res.clearCookie("uid");
+    req.logout((err) => {
+      if (err) {
+        console.log(err);
+        return res.status(500).json({ message: "Internal server error" });
+      }
+      res.redirect("/open");
+    });
+  }
 
 module.exports={
     handleUserSignUP,
     handleUserlogin,
+    handleLogout,
 }
