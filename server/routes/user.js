@@ -1,23 +1,36 @@
-const express = require("express")
-const {handleUserSignUP, handleUserlogin, handleLogout} = require("../controllers/user")
-const router= express.Router()
+const express = require("express");
+const { handleUserSignUP, 
+    handleUserlogin, 
+    handleUserLogout, 
+    handleForgotPassword, 
+    handleResetPassword } = require("../controllers/user");
+const router = express.Router();
 
-router.post("/",)
+router.post("/",);
 
-router.get("/signup", ( req, res)=>{
-
-    res.render("Signup")
-})
+router.get("/signup", (req, res) => {
+    res.render("signup");
+});
 
 router.post("/signup", handleUserSignUP);
 router.post("/login", handleUserlogin);
-router.get("/login", (req, res)=>{
-    res.render("login")
-})
+router.get("/login", (req, res) => {
+    res.render("login");
+});
 
-router.get("/logout", handleLogout);
+// Logout route
+router.post("/logout", handleUserLogout);
 
+// Forgot password routes
+router.get("/forgot-password", (req, res) => {
+    res.render("forgotPassword");
+});
+router.post("/forgot-password", handleForgotPassword);
 
+// Reset password routes
+router.get("/reset-password/:token", (req, res) => {
+    res.render("resetPassword", { token: req.params.token });
+});
+router.post("/reset-password/:token", handleResetPassword);
 
-
-module.exports= router;
+module.exports = router;

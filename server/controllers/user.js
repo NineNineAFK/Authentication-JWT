@@ -81,14 +81,14 @@ async function handleForgotPassword(req, res) {
         const transporter = nodemailer.createTransport({
             service: 'Gmail',
             auth: {
-                user: 'your-email@gmail.com',
-                pass: 'your-email-password',
+                user: 'dawkarad2002@gmail.com',
+                pass: '09112002Aaditya',
             },
         });
 
         const mailOptions = {
             to: user.email,
-            from: 'passwordreset@demo.com',
+            from: 'dawkarad2002@gmail.com',
             subject: 'Node.js Password Reset',
             text: `You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n` +
                 `Please click on the following link, or paste this into your browser to complete the process:\n\n` +
