@@ -20,6 +20,7 @@ router.get("/login", (req, res) => {
 
 // Logout route
 router.post("/logout", handleUserLogout);
+router.get("/logout", handleUserLogout);
 
 // Forgot password routes
 router.get("/forgot-password", (req, res) => {

@@ -10,7 +10,7 @@ const passport = require("./config/passport");
 const router= express.Router();
 
 const userRoute = require("./routes/user")
-const staticRouter= require("./routes/staticRouter")
+const staticRouter= require("./routes/staticRouter");
 const openRouter = require("./routes/openRouter");
 const authRouter = require("./routes/auth");
 
