@@ -149,4 +149,6 @@ module.exports={
     handleUserSignUP,
     handleUserlogin,
     handleLogout,
+    handleForgotPassword,
+    handleForgotPassword,
 }
