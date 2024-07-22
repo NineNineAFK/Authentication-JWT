@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>store for logged in</h1>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/store">Store</a></li>
+      <li><a href="/faq">FAQ</a></li>
+    </ul>
+    <div class="user-profile">
+      <a href="/user/profile">User Profile</a>
+    </div>
+  </nav>
+  <div class="container">
+    <h1>Store</h1>
+    <div class="products">
+      <% products.forEach(product => { %>
+        <div class="product">
+          <img src="<%= product.imageUrl %>" alt="<%= product.name %>">
+          <h2><%= product.name %></h2>
+          <p><%= product.description %></p>
+          <p>$<%= product.price %></p>
+          <button onclick="checkout('<%= product._id %>')">Checkout</button>
+        </div>
+      <% }) %>
+    </div>
+  </div>
+  <script>
+    function checkout(productId) {
+      // Logic for checkout (e.g., add to cart, redirect to payment page)
+      alert('Product ' + productId + ' checked out!');
+    }
+  </script>
 </body>
 </html>
