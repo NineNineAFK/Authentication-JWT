@@ -1,7 +1,7 @@
 const express = require("express")
 const {handleUserSignUP, handleUserlogin,} = require("../controllers/user")
 const router= express.Router()
-
+const Product = require("../model/products");
 router.get("/", (req, res)=>{
     res.render("home")
 })
