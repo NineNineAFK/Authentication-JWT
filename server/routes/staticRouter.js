@@ -26,6 +26,6 @@ router.get("/reviews", (req, res)=>{
   res.render("review");
 })
 
-router.post("/review", submitReview)
+router.post("/submit-review", submitReview)
 
 module.exports = router;
