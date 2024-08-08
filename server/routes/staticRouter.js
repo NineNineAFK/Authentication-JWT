@@ -22,8 +22,8 @@ router.get("/faq", (req, res)=>{
 })
 
 
-router.get("/reviews", (req, res)=>{
-  res.render("review");
+router.get("/review", (req, res)=>{
+  res.render("review", {user:req.user});
 })
 
 router.post("/submit-review", submitReview)

@@ -14,7 +14,7 @@ const userRoute = require("./routes/user")
 const staticRouter= require("./routes/staticRouter");
 const openRouter = require("./routes/openRouter");
 const authRouter = require("./routes/auth");
-
+//const revewRouter = require("./routes/staticRouter")
 app.use(express.json());
 app.use(express.urlencoded({extended:false}))
 app.use(cookieParser());

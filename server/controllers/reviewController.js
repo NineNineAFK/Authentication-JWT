@@ -21,6 +21,12 @@ async function submitReview(req, res) {
   }
 
   try {
+    // Check if a review from this user already exists
+    const existingReview = await REVIEW.findOne({ email: email });
+    if (existingReview) {
+      return res.status(400).json({ message: 'You have already submitted a review' });
+    }
+
     // Create a new review document
     const newReview = new REVIEW({ name, email, message, product, rating });
 
