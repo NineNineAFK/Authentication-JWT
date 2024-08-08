@@ -1,5 +1,6 @@
 const express = require("express")
 const {handleUserSignUP, handleUserlogin,} = require("../controllers/user")
+const {submitReview,} = require("../controllers/reviewController")
 const router= express.Router()
 const Product = require("../model/products");
 router.get("/", (req, res)=>{
