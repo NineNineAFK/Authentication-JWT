@@ -4,6 +4,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const {restrictToLoggedInUserOnly} = require("./middlewares/auth");
+const {submitReview,} = require("./controllers/reviewController")
 const passport = require("./config/passport");
 
 

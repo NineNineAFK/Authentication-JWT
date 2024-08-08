@@ -21,4 +21,11 @@ router.get("/faq", (req, res)=>{
     res.render("faq")
 })
 
+
+router.get("/reviews", (req, res)=>{
+  res.render("review");
+})
+
+router.post("/review", submitReview)
+
 module.exports = router;
